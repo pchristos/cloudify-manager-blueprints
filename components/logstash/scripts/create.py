@@ -26,6 +26,19 @@ def install_logstash():
     rabbitmq_username = ctx_properties['rabbitmq_username']
     rabbitmq_password = ctx_properties['rabbitmq_password']
 
+    # Mist.io ES endpoints
+    ctx.instance.runtime_properties['es_mist_stream'] = \
+        ctx_properties['es_mist_stream']
+    ctx.instance.runtime_properties['es_mist_ip'] = \
+        ctx_properties['es_mist_ip']
+    ctx.instance.runtime_properties['es_mist_port'] = \
+        ctx_properties['es_mist_port']
+    if ctx_properties['es_mist_stream']:
+        ctx.logger.info('Streaming monitoring data to Mist.io is enabled')
+        if not ctx_properties['es_mist_ip']:
+            ctx.abort_operation('The IP address of the Mist.io Elasticsearch '
+                                'instance is missing')
+
     logstash_log_path = '/var/log/cloudify/logstash'
     logstash_conf_path = '/etc/logstash/conf.d'
 
