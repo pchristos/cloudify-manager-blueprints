@@ -292,3 +292,14 @@ aws_secret_access_key: ''
 #  - {'source_path': 'http://www.getcloudify.org/spec/tosca-vcloud-plugin/1.3.1/plugin.yaml', 'destination_path': '/spec/tosca-vcloud-plugin/1.3.1/plugin.yaml'}
 #  - {'source_path': 'http://www.getcloudify.org/spec/vsphere-plugin/2.0/plugin.yaml', 'destination_path': '/spec/vsphere-plugin/2.0/plugin.yaml'}
 #  - {'source_path': 'http://www.getcloudify.org/spec/cloudify/3.4/types.yaml', 'destination_path': '/spec/cloudify/3.4/types.yaml'}
+
+#############################
+# Mist.io ES Configuration
+#############################
+# Allow the Cloudify Manager to stream all monitoring data to the Mist.io SaaS platform, as well
+# Denote whether monitoring data should be also streamed to Mist.io's Elasticsearch instance
+#stream_to_mist_io = false
+# The IP address of Mist.io's Elasticsearch instance
+#elasticsearch_mist_endpoint_ip: ''
+# The port of Mist.io's Elasticsearch instance
+#elasticsearch_mist_endpoint_port: 9200

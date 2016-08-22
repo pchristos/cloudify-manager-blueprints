@@ -1,0 +1,18 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Provide the Mist.io ES endpoints (IP and port) in order for the Cloudify 
+# Manager's Logstash instance to push monitoring data to Mist.io, as well.
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+inputs:
+  stream_to_mist_io:
+    description: Denotes whether monitoring data should also be streamed to Mist.io
+    type: boolean
+    default: false
+  elasticsearch_mist_endpoint_ip:
+    description: The IP address of Mist.io's Elasticsearch instance
+    type: string
+    default: ''
+  elasticsearch_mist_endpoint_port:
+    description: The port of Mist.io's Elasticsearch instance
+    type: integer
+    default: 9200
