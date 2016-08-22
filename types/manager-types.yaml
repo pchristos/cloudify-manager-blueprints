@@ -397,6 +397,18 @@ node_types:
       es_endpoint_port:
         type: integer
         default: { get_input: elasticsearch_endpoint_port }
+      es_mist_stream:
+        description: Denotes whether monitoring data should also be streamed to Mist.io
+        type: boolean
+        default: { get_input: stream_to_mist_io }
+      es_mist_ip:
+        description: The IP address of Mist.io's Elasticsearch instance
+        type: string
+        default: { get_input: elasticsearch_mist_endpoint_ip }
+      es_mist_port:
+        description: The port of Mist.io's Elasticsearch instance
+        type: integer
+        default: { get_input: elasticsearch_mist_endpoint_port }
       rabbitmq_endpoint_ip:
         description: Location of the endpoint. If blank, rabbit will be installed and configured on the manager.
         type: string
